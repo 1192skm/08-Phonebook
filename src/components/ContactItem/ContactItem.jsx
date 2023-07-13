@@ -18,7 +18,7 @@ export function ContactItem({id, name, number}) {
           {name}: {number}
         </p>
         <button className={css.btn} onClick={handleDelete} type="button">
-          {isDeleting ? <RotatingLines width="14" /> : 'Delete'}
+          Delete
         </button>
       </li>
     );

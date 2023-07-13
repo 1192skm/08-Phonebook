@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import css from './ContactForm.module.css';
-import { RotatingLines } from 'react-loader-spinner';
 import { useDispatch, useSelector } from 'react-redux';
 import { getIsLoading } from 'redux/selectors';
 import { addContact } from 'redux/operations';
@@ -75,7 +74,7 @@ export function ContactForm({contacts}) {
         />
       </label>
       <button className={css.btn} type="submit">
-        {isLoading ? <RotatingLines width="16" strokeColor='rgb(244, 244, 68)'/> : 'Add contact'}
+        Add contact
       </button>
     </form>
   );
