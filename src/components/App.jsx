@@ -7,7 +7,7 @@ import { getContacts, getError, getFilter, getIsLoading } from 'redux/selectors'
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
-import { RotatingLines } from 'react-loader-spinner';
+
 import { Spinner } from './Spinner/Spinner';
 
 export function App() {

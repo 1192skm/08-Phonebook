@@ -1,15 +1,12 @@
 import { useState } from 'react';
 import css from './ContactForm.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { getIsLoading } from 'redux/selectors';
+import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/operations';
 
 
 export function ContactForm({contacts}) {
 
   const dispatch = useDispatch();
-  const isLoading = useSelector(getIsLoading);
-
 
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
