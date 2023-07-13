@@ -3,21 +3,27 @@ import { Filter } from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';
 import css from './App.module.css';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
-import { useGetContactsQuery } from 'redux/contactsSlice';
-import { getFilter } from 'redux/filterSlice';
+import { getContacts, getError, getFilter, getIsLoading } from 'redux/selectors';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchContacts } from 'redux/operations';
 
 export function App() {
-  const { data: contacts, isFetching } = useGetContactsQuery();
+  const dispatch = useDispatch();
+  const isLoading = useSelector(getIsLoading);
+  const error = useSelector(getError);
+    const filter = useSelector(getFilter);
+    const contacts = useSelector(getContacts);
 
-  const filter = useSelector(getFilter);
+  useEffect(() => { dispatch(fetchContacts()); }, [dispatch]);
+
+
 
   const normFilter = filter.toLocaleLowerCase();
-  let findContacts = [];
-  if (contacts) {
-    findContacts = contacts.filter(contact =>
+  const findContacts = contacts.filter(contact =>
       contact.name.toLowerCase().includes(normFilter)
     );
-  }
+  
   return (
     <div className={css.container}>
       <h1 className={css.title}>
@@ -27,7 +33,7 @@ export function App() {
 
       <h2 className={css.subtitle}>Contacts</h2>
       <Filter />
-      {contacts && !isFetching && <ContactList findContacts={findContacts} />}
+      {contacts && !isLoading&& !error && <ContactList findContacts={findContacts} />}
     </div>
   );
 }

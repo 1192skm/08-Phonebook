@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import css from './ContactForm.module.css';
-import { useAddContactMutation } from 'redux/contactsSlice';
 import { RotatingLines } from 'react-loader-spinner';
+import { useDispatch, useSelector } from 'react-redux';
+import { getIsLoading } from 'redux/selectors';
+import { addContact } from 'redux/operations';
 
 
 export function ContactForm({contacts}) {
-    const [addContact, {isLoading}] = useAddContactMutation();
+
+  const dispatch = useDispatch();
+  const isLoading = useSelector(getIsLoading);
 
 
   const [name, setName] = useState('');
@@ -34,10 +38,11 @@ export function ContactForm({contacts}) {
       name,
       number,
     };
+
     console.log(contacts);
     contacts.some(contact => contact.name === newContact.name)
       ? alert(`${newContact.name} is already contact`)
-      : addContact(newContact);
+      : dispatch(addContact(newContact));
     reset();
   };
 
