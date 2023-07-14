@@ -10,15 +10,15 @@ const ContactsPage = lazy(() => import('../pages/Contacts'));
 
 export function App() {
   return (
-
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
-        <Route path="/users/login" element={<LoginPage />} />
-        <Route path="/users/signup" element={<RegisterPage />} />
-        <Route path="/contacts" element={<ContactsPage />} />
-      </Route>
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
+        </Route>
+      </Routes>
+    </>
   );
-};
-
+}
