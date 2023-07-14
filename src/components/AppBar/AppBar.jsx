@@ -4,11 +4,11 @@ import { AuthNav } from 'components/AuthNav/AuthNav';
 // import css from './AppBar.module.css';
 
 export function AppBar() {
-    return (
-        <header>
-            <Navigation />
-            <UserMenu />
-            <AuthNav/>
-        </header>
-    )
+  return (
+    <header>
+      <Navigation />
+      <UserMenu />
+      <AuthNav />
+    </header>
+  );
 }
