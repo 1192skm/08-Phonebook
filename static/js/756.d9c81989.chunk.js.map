@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/756.d9c81989.chunk.js","mappings":"iMAAO,SAASA,IACZ,OAAQ,uBAAG,YACd,C","sources":["pages/Register.js"],"sourcesContent":["export function Register() { \n    return (<p>Register</p>);\n};\n"],"names":["Register"],"sourceRoot":""}
