@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/490.dca1a7e8.chunk.js","mappings":"8LAAO,SAASA,IACZ,OAAQ,uBAAG,SACd,C","sources":["pages/Login.js"],"sourcesContent":["export function Login() { \n    return (<p>Login</p>);\n};"],"names":["Login"],"sourceRoot":""}
