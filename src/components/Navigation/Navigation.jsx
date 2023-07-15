@@ -8,10 +8,10 @@ export function Navigation () {
   return (
     <nav>
       <NavLink className={css.link} to="/">
-        Home
+        Home___       
       </NavLink>
       <NavLink className={css.link} to="/contacts">
-        Contacts
+        Contacts____
       </NavLink>
     </nav>
   );

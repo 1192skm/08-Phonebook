@@ -1,3 +1,9 @@
-export function Register() { 
-    return (<p>Register</p>);
+import { RegisterForm } from "components/RegisterForm/RegisterForm";
+
+const Register = () => {
+  return (
+    <RegisterForm/>
+  );
 };
+
+export default Register;

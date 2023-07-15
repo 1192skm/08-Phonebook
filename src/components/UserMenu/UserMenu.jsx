@@ -1,9 +1,9 @@
-// import css from './UserMenu.module.css'
+import css from './UserMenu.module.css'
 
 export function UserMenu() {
     return (
-      <div>
-        <p>mango@mail.com</p>
+      <div className={css.usermenu}>
+        <p className={css.username}>mango@mail.com</p>
         <button type="button">Logout</button>
       </div>
     );

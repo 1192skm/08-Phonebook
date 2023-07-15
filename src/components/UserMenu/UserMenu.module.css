@@ -1,0 +1,8 @@
+.usermenu {
+    display: flex;
+}
+
+.username {
+    padding: 0;
+    margin: 0;
+}
