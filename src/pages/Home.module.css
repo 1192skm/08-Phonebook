@@ -1,0 +1,10 @@
+.mainwelcome {
+  text-align: center;
+  margin-top: 200px;
+  font-size: 50px;
+  font-weight: 700;
+  color: rgb(73, 12, 98);
+}
+.accent {
+  color: rgb(244, 244, 68);
+}

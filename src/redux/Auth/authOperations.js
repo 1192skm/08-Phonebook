@@ -47,16 +47,20 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   }
 });
 
-// export const refreshUser = createAsyncThunk(
-//   'auth/refresh',
-//     async (_, thunkAPI) => {
-    
-//         try {
-//             setAuthHeader();
-//       const resp = await axios.get('/users/current');
-//       return resp.data;
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
+export const refreshUser = createAsyncThunk(
+  'auth/refresh',
+    async (_, thunkAPI) => {
+        const state = thunkAPI.getState();
+        const token = state.auth.token;
+        if (!token) {
+            return thunkAPI.rejectWithValue("No token");
+        }
+        setAuthHeader(token);
+        try {
+      const resp = await axios.get('/users/current');
+      return resp.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

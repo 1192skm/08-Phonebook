@@ -5,10 +5,10 @@ export function AuthNav() {
   return (
     <div>
       <NavLink className={css.link} to="/register">
-        Register___
+        Register
       </NavLink>
       <NavLink className={css.link} to="/login">
-        Log In____
+        Log In
       </NavLink>
     </div>
   );
