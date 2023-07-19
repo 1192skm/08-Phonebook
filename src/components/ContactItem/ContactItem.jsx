@@ -11,9 +11,11 @@ export function ContactItem({id, name, number}) {
 
     return (
       <li className={css.listitem} key={id}>
-        <p className={css.listcontact}>
-          {name}: {number}
-        </p>
+        <div className={css.listname}>
+          <p className={css.listcontact}>{name}:</p>
+          <p className={css.listcontact}>{number}</p>
+        </div>
+
         <button className={css.btn} onClick={handleDelete} type="button">
           Delete
         </button>

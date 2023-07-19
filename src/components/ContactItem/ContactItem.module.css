@@ -3,6 +3,11 @@
     justify-content: space-between;
     align-items: center;
 }
+.listname{
+  display: flex;
+   justify-content: space-between;
+   width: 500px;
+}
 .listcontact{
 font-weight: 700;
   font-size: 18px;
